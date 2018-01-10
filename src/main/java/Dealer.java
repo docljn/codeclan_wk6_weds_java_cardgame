@@ -12,7 +12,8 @@ public class Dealer {
         return this.deck;
     }
 
-    public dealCard(Player player) {
-
+    public void dealCard(Player player) {
+        Card card = this.deck.removeCard();
+        player.acceptCard(card);
     }
 }
