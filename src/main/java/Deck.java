@@ -38,6 +38,8 @@ public class Deck {
     }
 
     public Card removeCard() {
+//        might need to add logic to check there are enough cards to deal
+//        either here, or in the dealer class....
         Card card = this.cardDeck.remove(0);
         return card;
     }
