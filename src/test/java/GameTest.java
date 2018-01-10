@@ -1,6 +1,9 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import static org.junit.Assert.assertEquals;
 
 public class GameTest {
@@ -51,7 +54,7 @@ public class GameTest {
 
     @Test
     public void gameDealsRound(){
-        game_with_players.dealRound();
+        game_with_players.dealCards();
         assertEquals(1, player.getHand().size());
     }
 
@@ -63,15 +66,28 @@ public class GameTest {
         assertEquals(expected, game_with_players.recordScores().get(player2));
     }
 
+    @Test
+    public void gameCanBeWon(){
+        player2.acceptCard(card_win);
+        player2.acceptCard(card_win);
+        game_with_players.dealCards();
+        game_with_players.checkForWinner();
+        assertEquals(true, game_with_players.isWon());
+    }
+
+
+
+
 
     @Test
     public void gameCalculatesWinner(){
         player.acceptCard(card_lose);
         player2.acceptCard(card_win);
-        game_with_players.recordScores();
-        assertEquals(player2, game_with_players.getWinner());
+        assertEquals(player2, game_with_players.winner());
 
     }
+
+
 
 
 

@@ -45,7 +45,7 @@ public class Game {
         return (!hasSpace() && !isWon());
     }
 
-    public void dealRound() {
+    public void dealCards() {
         if (readyToPlay()){
             for (Player player: players) {
                 dealer.dealCard(player);
@@ -54,6 +54,12 @@ public class Game {
 
     }
 
+    public void checkForWinner() {
+//  only works for a game with two players
+        if (players.get(0).getHandScore() != players.get(1).getHandScore()) {
+            this.won = true;
+        }
+    }
 
     public HashMap<Player, Integer> recordScores() {
         HashMap<Player, Integer> scoresHashMap = new HashMap<>();
@@ -62,4 +68,25 @@ public class Game {
         }
         return scoresHashMap;
     }
+
+    public Player winner() {
+    }
+
+
+//    public Player winner() {
+//        Player winner;
+//        for (int i = 0; i < players.size(); i++){
+//            if (players.get(i).getHandScore() == players.get(i++).getHandScore()) {
+//                return ;
+//            } else if (players.get(i).getHandScore() > players.get(i++).getHandScore()) {
+//                winner = players.get(i);
+//            } else {
+//                winner = players.get(i++);
+//            }
+//        }
+//        return winner;
+//
+//
+//    }
 }
+
