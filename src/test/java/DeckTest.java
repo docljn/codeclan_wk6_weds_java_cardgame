@@ -26,4 +26,13 @@ public class DeckTest {
         deck.fillDeck();
         assertEquals(52, deck.getCardDeck().size());
     }
+
+    @Test
+    public void deckHasAceOfClubsFirstCard(){
+        deck.fillDeck();
+        Card card = deck.getCardDeck().get(0);
+        assertEquals(Suit.CLUBS, card.getSuit());
+        assertEquals(Rank.ACE, card.getRank());
+    }
+
 }
