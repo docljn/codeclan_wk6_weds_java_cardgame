@@ -17,22 +17,21 @@ public class DeckTest {
     }
 
     @Test
-    public void deckStartsEmpty(){
-        assertEquals(0, deck.getCardDeck().size());
-    }
-
-    @Test
     public void deckHas52Cards(){
-        deck.fillDeck();
         assertEquals(52, deck.getCardDeck().size());
     }
 
     @Test
     public void deckHasAceOfClubsFirstCard(){
-        deck.fillDeck();
         Card card = deck.getCardDeck().get(0);
         assertEquals(Suit.CLUBS, card.getSuit());
         assertEquals(Rank.ACE, card.getRank());
+    }
+
+    @Test
+    public void canRemoveCard(){
+        Card card = deck.removeCard();
+        assertEquals(51, deck.getCardDeck().size());
     }
 
 }
