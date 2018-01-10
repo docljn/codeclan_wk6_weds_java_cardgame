@@ -83,7 +83,16 @@ public class GameTest {
     public void gameCalculatesWinner(){
         player.acceptCard(card_lose);
         player2.acceptCard(card_win);
-        assertEquals(player2, game_with_players.winner());
+        assertEquals(player2, game_with_players.getWinner());
+
+    }
+
+
+    @Test
+    public void gamePlaysUntilWon(){
+        game_with_players.play();
+        assertEquals(true, game_with_players.isWon());
+
 
     }
 

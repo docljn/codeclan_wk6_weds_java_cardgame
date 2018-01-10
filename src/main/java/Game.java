@@ -61,32 +61,28 @@ public class Game {
         }
     }
 
+    
+    public Player getWinner() {
+        Player winner;
+            if (players.get(0).getHandScore() > players.get(1).getHandScore()) {
+                winner = players.get(0);
+            } else {
+                winner = players.get(1);
+            }
+            return winner;
+//  I can't see how to check if a game is won before checking for a winner....
+    }
+
+
     public HashMap<Player, Integer> recordScores() {
+//        ended up not using this method yet - maybe useful if more than one player
         HashMap<Player, Integer> scoresHashMap = new HashMap<>();
         for (Player player: players
-             ) {scoresHashMap.put(player, player.getHandScore());
+                ) {scoresHashMap.put(player, player.getHandScore());
         }
         return scoresHashMap;
     }
 
-    public Player winner() {
-    }
 
-
-//    public Player winner() {
-//        Player winner;
-//        for (int i = 0; i < players.size(); i++){
-//            if (players.get(i).getHandScore() == players.get(i++).getHandScore()) {
-//                return ;
-//            } else if (players.get(i).getHandScore() > players.get(i++).getHandScore()) {
-//                winner = players.get(i);
-//            } else {
-//                winner = players.get(i++);
-//            }
-//        }
-//        return winner;
-//
-//
-//    }
 }
 
