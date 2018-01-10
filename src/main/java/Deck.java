@@ -4,8 +4,8 @@ public class Deck {
 
     ArrayList<Card> cardDeck;
     Card card;
-    ArrayList<Suit> suits;
-    ArrayList<Rank> ranks;
+    Suit[] allSuits;
+    Rank[] allRanks;
 
     public Deck(){
         this.cardDeck = new ArrayList<>();
@@ -14,5 +14,21 @@ public class Deck {
     }
 
 
+    public ArrayList<Card> getCardDeck() {
+        return this.cardDeck;
+    }
 
+    public void fillDeck() {
+        Suit[] allSuits = Suit.values();
+        Rank[] allRanks = Rank.values();
+
+
+        for (Suit i: allSuits){
+            for (Rank j: allRanks) {
+                Card newCard = new Card(i, j);
+                this.cardDeck.add(newCard);
+            }
+        }
+
+    }
 }
