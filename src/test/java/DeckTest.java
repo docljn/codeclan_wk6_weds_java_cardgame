@@ -1,8 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,16 +19,17 @@ public class DeckTest {
         assertEquals(52, deck.getCardDeck().size());
     }
 
-    @Test
-    public void deckHasAceOfClubsFirstCard(){
-        Card card = deck.getCardDeck().get(0);
-        assertEquals(Suit.CLUBS, card.getSuit());
-        assertEquals(Rank.ACE, card.getRank());
-    }
+//    @Test
+//    removed test as deck is now shuffled at generation time
+//    public void deckHasAceOfClubsFirstCard(){
+//        Card card = deck.getCardDeck().get(0);
+//        assertEquals(Suit.CLUBS, card.getSuit());
+//        assertEquals(Rank.ACE, card.getRank());
+//    }
 
     @Test
     public void canRemoveCard(){
-        Card card = deck.removeCard();
+        deck.removeCard();
         assertEquals(51, deck.getCardDeck().size());
     }
 

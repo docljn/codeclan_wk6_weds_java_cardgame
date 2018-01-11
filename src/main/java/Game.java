@@ -61,7 +61,7 @@ public class Game {
         }
     }
 
-    
+
     public Player getWinner() {
         Player winner;
             if (players.get(0).getHandScore() > players.get(1).getHandScore()) {
@@ -82,6 +82,26 @@ public class Game {
         }
         return scoresHashMap;
     }
+
+    /*
+    Thinking about something like this to get the highest score, and then return the winner?
+    @Test
+public void max_value_map_java() {
+
+    Map.Entry<Integer, Integer> maxEntry = null;
+
+    for (Map.Entry<Integer, Integer> entry : mapValues.entrySet()) {
+
+        if (maxEntry == null
+                || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+            maxEntry = entry;
+        }
+    }
+
+    assertEquals(new Integer(7), maxEntry.getValue());
+}
+
+     */
 
 
 }
